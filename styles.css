@@ -1,12 +1,28 @@
 /* UTILITY CLASSES */
+/* CSS RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
 :root {
   --ff-primary-montserrat: "Montserrat", sans-serif;
   --ff-secondary-fraunces: "Fraunces", serif;
   --clr-700-deep-aquamarine: hsla(157, 36%, 37%, 1);
   --clr-txt: hsla(228, 12%, 48%, 1);
-  --clr-h2:hsla(212, 21%, 14%, 1);
-  --bg-clr-100-cream:hsla(28, 38%, 92%, 1);
-  --bg-clr-pure-white:hsla(0, 0%, 100%, 1);
+  --clr-h2: hsla(212, 21%, 14%, 1);
+  --bg-clr-100-cream: hsla(28, 38%, 92%, 1);
+  --bg-clr-pure-white: hsla(0, 0%, 100%, 1);
+  --clr-blue: rgb(78, 78, 221);
   --ls-primary-heading: 0.3125rem;
   --fs-primary-heading: 0.75rem;
   --fs-secondary-heading: 2rem;
@@ -18,70 +34,48 @@
   --fw-500: 500;
 }
 
-/* CSS RESET */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font: inherit;
-}
-
-img,
-picture, svg {
-  max-width: 100%;
-  display: block;
-}
-
-/* -------------------------------------------------------------------------------*/
 /* MAIN CONTAINERS */
-.main-container {
+.main__container {
   background: var(--bg-clr-100-cream);
-  padding: 1.75em 1em;
+  padding: 2rem 1rem;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.content-container {
+.card {
   background: var(--bg-clr-pure-white);
   max-width: 37.5rem;
   border-radius: 0.625rem;
   font-family: var(--ff-primary-montserrat);
 }
-.content-container-button {
-  background-color: var(--clr-700-deep-aquamarine);
-  border: none;
-  border-radius: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-.content-container-button:hover {
-  background: rgb(78, 78, 221);
-}
-.content-container-button .btn-img {
-  transform: rotateY(180deg);
-}
 @media (min-width: 40rem) {
-  .content-container {
+  .card {
     display: flex;
   }
 }
 
-img {
+.product__img {
   border-radius: 0.625rem 0.625rem 0 0;
 }
+@media (min-width: 40rem) {
+  .product__img {
+    border-radius: 0.625rem 0 0 0.625rem;
+  }
+}
 
-/* -------------------------------------------------------------------------------*/
-/* -------------------------------------------------------------------------------*/
 /* TEXT */
 p {
   color: var(--clr-txt);
   font-size: var(--fs-paragraph);
   font-weight: var(--fw-500);
   line-height: var(--lh-small);
+}
+@media (min-width: 40rem) {
+  p {
+    max-width: 25ch;
+  }
 }
 
 h1 {
@@ -92,7 +86,8 @@ h1 {
   line-height: var(--lh-normal);
 }
 
-h2, .span-green {
+h2,
+.text--green {
   font-size: var(--fs-secondary-heading);
   font-family: var(--ff-secondary-fraunces);
   font-weight: var(--fw-700);
@@ -100,52 +95,55 @@ h2, .span-green {
   max-width: 20ch;
 }
 
-.span-flex {
+.prices--flex-wrapper {
   display: flex;
   align-items: center;
 }
 
-.span-green {
+.text--green {
   color: var(--clr-700-deep-aquamarine);
   margin-right: 0.5em;
 }
 
-.span-line-through {
+.text--line-through {
   text-decoration: line-through;
 }
 
-/* -------------------------------------------------------------------------------*/
 /* CONTENT WRAPPER */
-.content-wrapper {
+.article {
   display: flex;
   flex-direction: column;
   padding: 2em;
   gap: 1.25em;
   justify-content: space-between;
 }
+@media (min-width: 40rem) {
+  .article {
+    gap: 1.7em;
+  }
+}
 
-/* -------------------------------------------------------------------------------*/
-/* -------------------------------------------------------------------------------*/
 /* BUTTON */
-.button-txt {
+.btn {
+  cursor: pointer;
+  background-color: var(--clr-700-deep-aquamarine);
+  border: none;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn:hover {
+  background: var(--clr-blue);
+}
+
+.btn__img {
+  transform: rotateY(180deg);
+}
+
+.btn__txt {
   padding: 1.2em 0.5em;
   font-weight: var(--fw-700);
   line-height: var(--lh-normal);
   color: var(--bg-clr-pure-white);
-}
-
-/* -------------------------------------------------------------------------------*/
-/* -------------------------------------------------------------------------------*/
-/* @MEDIA QUERIES */
-@media (min-width: 40rem) {
-  img {
-    border-radius: 0.625rem 0 0 0.625rem;
-  }
-  .content-wrapper {
-    gap: 1.7em;
-  }
-  p {
-    max-width: 25ch;
-  }
-}
-/* -------------------------------------------------------------------------------*//*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */
