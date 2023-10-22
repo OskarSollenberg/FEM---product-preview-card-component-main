@@ -102,7 +102,7 @@ h3,
 
 .text--green {
   color: var(--clr-700-deep-aquamarine);
-  margin-right: 0.5em;
+  margin-right: 0.5rem;
 }
 
 .text--line-through {
@@ -113,14 +113,9 @@ h3,
 .article {
   display: flex;
   flex-direction: column;
-  padding: 2em;
-  gap: 1.25em;
+  padding: 2rem;
+  gap: 1.25rem;
   justify-content: space-between;
-}
-@media (min-width: 40rem) {
-  .article {
-    gap: 1.7em;
-  }
 }
 
 /* BUTTON */
@@ -142,8 +137,8 @@ h3,
 }
 
 .btn__txt {
-  padding: 1.2em 0.5em;
+  padding: 1.2rem 0.5rem;
+  color: var(--bg-clr-pure-white);
   font-weight: var(--fw-700);
   line-height: var(--lh-normal);
-  color: var(--bg-clr-pure-white);
 }/*# sourceMappingURL=styles.css.map */
